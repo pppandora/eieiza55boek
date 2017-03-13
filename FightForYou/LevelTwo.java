@@ -52,7 +52,7 @@
        }
          public void time(){
             if(timee>0){
-            showText(" "+timee/10 , 300,20);
+            showText(" "+timee/2 , 300,20);
             timee--;
             if(timee == 0){
                 Greenfoot.setWorld(new Lose());

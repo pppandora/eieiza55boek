@@ -49,7 +49,7 @@ public class LevelThree extends World
         }
           public void time(){
             if(timee>0){
-            showText(" "+timee/10 , 300,20);
+            showText(" "+timee , 300,20);
             timee--;
             if(timee == 0){
                 Greenfoot.setWorld(new Lose());
@@ -68,7 +68,7 @@ public class LevelThree extends World
             }
           }
            if(getObjects(Ptuow.class).isEmpty()){
-          if(moncount == 20&&a == true){
+          if(moncount == 10 &&a == true){
               d= false;
              
              addObject(new Ptuow(),785,310);
