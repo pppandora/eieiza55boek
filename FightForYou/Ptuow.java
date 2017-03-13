@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ptuow extends Boss
 {
+    int BossHP = 1000;
     int time;
     int direc =-1;
     /**
@@ -23,6 +24,7 @@ public class Ptuow extends Boss
         move(direc);
         shoot();
         walk();
+        BossHP();
     }    
     public void shoot(){
         
@@ -35,6 +37,14 @@ public class Ptuow extends Boss
                     
              
         }
+        public void BossHP(){
+        if(isTouching(bulletboss.class)){
+            BossHP--;
+            if(BossHP == 0){
+                getWorld().removeObject(this);
+            }
+        }
+    }
     
      public void die(){
          if(isTouching(bulletboss.class)){

@@ -16,7 +16,7 @@ public class bulletboss extends game
     public void act() 
     {
         // Add your action code here.
-         setLocation(getX()+4,getY());
+         setLocation(getX()+1,getY());
         if(isAtEdge()){
          getWorld().removeObject(this);
          return;
@@ -44,10 +44,8 @@ public class bulletboss extends game
     public void countScore(){
      if(isTouching(edok.class)||isTouching(Ptuow.class)||isTouching(Bigboss.class))   
     {
-          Score.score+=10;
-          if(Score.score == 300){
-              Greenfoot.setWorld(new EndGame());
-            } 
+          Score.score=Score.score+10;
+         
     }
   }
 }

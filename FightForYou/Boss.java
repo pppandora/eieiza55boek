@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Boss extends Actor
 {
+    
     int heart = 1000;
     int damage2 = 10;
     /**
@@ -21,10 +22,8 @@ public class Boss extends Actor
     
     public void hitit(int damage2) {
         heart = heart - damage2;
-        if(heart == 0) {
-           getWorld().removeObject(this);
-           Greenfoot.stop();
-           Greenfoot.setWorld(new EndGame());
-        }
+        
     }
+    
+    
 }

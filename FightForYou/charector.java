@@ -16,6 +16,10 @@ public class charector extends Actor
     public int ySpeed;
     public int groundLevel=310;
     public int heart = 5;
+    int delay;
+    public charector(){
+        delay = 30;
+    }
     public void act() 
     {
         // Add your action code here.
@@ -23,21 +27,29 @@ public class charector extends Actor
         checkFire();
         jump();
         CheckDie();
+        delay++;
         
     }
 
     public void checkFire()
     {
+     
         if(Greenfoot.isKeyDown("z")) {
-            
+               if(delay>=30){
             getWorld().addObject(new Bullet(), getX(), getY());
+        
             
              setImage("chaAc.png"); 
+            }
         }
+    
         if(Greenfoot.isKeyDown("x")) {
+               if(delay>=30){
             getWorld().addObject(new bulletboss(), getX(), getY());
              setImage("chaAc.png"); 
+            }
         }
+    
     }    
     
     public void action(){

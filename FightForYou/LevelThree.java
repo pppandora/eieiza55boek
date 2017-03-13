@@ -8,10 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class LevelThree extends World
 {
-        int time;
+       int time;
         int timer;
-        int co = 3000;
-        int count=1000;
+        int moncount;
+        int count;
+        boolean a = true;
+        boolean d = true;
+        boolean e = true;
         String b[]={"b0","b1"};
         String c[] = {"c0","c1","c2"};
         String s[] = {"s0"};
@@ -42,27 +45,28 @@ public class LevelThree extends World
        public void addmonster(){
             
            time++;
-           if (time ==120){
+           if (time ==120&& d==true){
                addObject(new tuow(),Greenfoot.getRandomNumber(600)+800,310);
+               moncount++;
               if(Bigboss.class != null){
                time = Greenfoot.getRandomNumber(5);
             }
           }
-          count--;
-          if(count == 0){
+           if(getObjects(Ptuow.class).isEmpty()){
+          if(moncount == 10&&a == true){
+              d= false;
+             
              addObject(new Ptuow(),785,310);
             
+             count++;
             }
-          co--;
-          if(co == 0){
+        }
+          
+          if(count== 2 ){
              addObject(new Bigboss(),785,310);
-            
+            a= false;
             }
-            time++;
-           if (time ==120){
-               addObject(new tuow(),Greenfoot.getRandomNumber(800),310);
-              
-          }
+           
         }
           public void random (){
         int x = Greenfoot.getRandomNumber(3);

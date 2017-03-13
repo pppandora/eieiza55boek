@@ -28,6 +28,7 @@ public class Bigboss extends Boss
         move(direc);
         shoot();
         walk();
+        die();
     }    
     public void shoot(){
         

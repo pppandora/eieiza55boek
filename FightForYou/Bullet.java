@@ -22,7 +22,7 @@ public class Bullet extends game
     public void act()
     {
       
-      setLocation(getX()+3,getY());
+      setLocation(getX()+1,getY());
         if(isAtEdge()){
          getWorld().removeObject(this);
          return;
@@ -50,9 +50,7 @@ public class Bullet extends game
      if(isTouching(tuow.class)||isTouching(MonLv1.class))   
      {
           Score.score++;
-          if(Score.score == 300){
-              Greenfoot.setWorld(new EndGame());
-            } 
+          
      }  
    }
 }

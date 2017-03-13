@@ -52,7 +52,7 @@
             }
           }
           
-          if(moncount == 5 &&a == true){
+          if(moncount == 50 &&a == true){
               d= false;
              addObject(new edok(),785,310);
              a= false;

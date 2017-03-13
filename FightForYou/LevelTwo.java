@@ -11,7 +11,9 @@
        
        int time;
         int timer;
-        int count=1000;
+        int moncount;
+        boolean a = true;
+        boolean d = true;
         String b[]={"b0","b1"};
         String c[] = {"c0","c1","c2"};
         String s[] = {"s0"};
@@ -40,18 +42,23 @@
        
        public void addmonster(){
             
+             
            time++;
-          if (time ==120){
-               addObject(new tuow(),Greenfoot.getRandomNumber(600)+800,310);
-              if(Ptuow.class != null){
+          if (time ==120 && d==true){
+               addObject(new MonLv1(),Greenfoot.getRandomNumber(600)+800,310);
+               
+               moncount++;
+              if(edok.class != null){
                time = Greenfoot.getRandomNumber(5);
             }
           }
-          count--;
-          if(count == 0){
+          
+          if(moncount == 100 &&a == true){
+              d= false;
              addObject(new Ptuow(),785,310);
-            
+             a= false;
             }
+        
         
         }
          public void random (){
