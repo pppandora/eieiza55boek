@@ -25,12 +25,12 @@ public class Lose extends World
          showText(" Score :"+Score.score,393,271);
     }
     public void act(){
-       sound.stop();
+       sound.pause();
        lose.setVolume(80);
        lose.play();
     }
     public void stopped(){
-        sound.pause();
+        sound.stop();
         lose.stop();
     }
 }

@@ -28,6 +28,7 @@
              super(800, 400, 1); 
              addObject(new Heart(),20,20);
              addObject(new sc(),217,20);
+             addObject(new Time(),303,20);
               addObject(new charector(),20,310);
               addObject(new reset2(),783,380);
               addObject(new exit(),778,23);

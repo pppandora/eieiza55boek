@@ -22,7 +22,7 @@ public class Startpage extends World
         sound.setVolume(60);
     }
     public void started(){
-       sound.play();
+       sound.playLoop();
       
     }
     public void stopped(){

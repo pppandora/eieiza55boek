@@ -21,9 +21,7 @@ public class Menupage extends World
         addObject(new lv2(),395,294);
         addObject(new lv3(),676,294);
     }
-      public void started(){
-       sound.play();
-    }
+     
     public void stopped(){
         sound.pause();
     }

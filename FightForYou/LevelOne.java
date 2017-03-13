@@ -31,7 +31,7 @@
               addObject(new charector(),20,310);
               addObject(new reset(),783,380);
               addObject(new exit(),778,23);
-              
+              addObject(new Time(),303,20);
               time++;
         }
         public void act(){
