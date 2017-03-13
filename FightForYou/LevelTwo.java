@@ -8,7 +8,8 @@
      */
     public class LevelTwo extends World
     {
-       
+       public GreenfootSound sound = new GreenfootSound ("bg.wav");
+        static int timee = 3600;
        int time;
         int timer;
         int moncount;
@@ -25,8 +26,10 @@
         {    
             // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
              super(800, 400, 1); 
+             addObject(new Heart(),20,20);
+             addObject(new sc(),217,20);
               addObject(new charector(),20,310);
-              addObject(new resume(),783,380);
+              addObject(new reset2(),783,380);
               addObject(new exit(),778,23);
               time++;
         }
@@ -38,7 +41,23 @@
             if (timer ==120){
            random();
           }
+          changeW();
+          time();
         }
+        public void changeW(){
+                if(Ptuow.class == null){
+                    Greenfoot.setWorld(new EndGame());
+        }
+       }
+         public void time(){
+            if(timee>0){
+            showText(" "+timee/60 , 300,20);
+            timee--;
+            if(timee == 0){
+                Greenfoot.setWorld(new Lose());
+            }
+         }
+       }
        
        public void addmonster(){
             
@@ -67,7 +86,10 @@
         addObject(new sun (s[0]),743,24);
         addObject(new bird (b[Greenfoot.getRandomNumber(2)]),62,51+(Greenfoot.getRandomNumber(10)));
        }  
-     
+      
+       public void stopped(){
+            sound.pause();
+       }
            
         }  
     

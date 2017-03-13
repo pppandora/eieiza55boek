@@ -8,7 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class LevelThree extends World
 {
-       int time;
+    public GreenfootSound sound = new GreenfootSound ("bg.wav");  
+     static int timee = 3600;
+    int time;
         int timer;
         int moncount;
         int count;
@@ -27,8 +29,10 @@ public class LevelThree extends World
             // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
             // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
              super(800, 400, 1); 
+             addObject(new Heart(),20,20);
+             addObject(new sc(),217,20);
               addObject(new charector(),20,310);
-              addObject(new resume(),783,380);
+              addObject(new reset3(),783,380);
               addObject(new exit(),778,23);
               time++;
         }
@@ -37,10 +41,20 @@ public class LevelThree extends World
            showText(" "+Score.score+" ", 240,20);
            addmonster();
            timer++;
+           time();
             if (timer ==120){
            random();
           }
         }
+          public void time(){
+            if(timee>0){
+            showText(" "+timee/60 , 300,20);
+            timee--;
+            if(timee == 0){
+                Greenfoot.setWorld(new Lose());
+            }
+         }
+       }
        
        public void addmonster(){
             
@@ -74,5 +88,8 @@ public class LevelThree extends World
         addObject(new sun (s[0]),743,24);
         addObject(new bird (b[Greenfoot.getRandomNumber(2)]),62,51+(Greenfoot.getRandomNumber(10)));
        }  
-       
+     
+    public void stopped(){
+        sound.pause();
+    }
 }

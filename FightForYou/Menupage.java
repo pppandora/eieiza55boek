@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Menupage extends World
 {
-
+    public GreenfootSound sound = new GreenfootSound ("bg.wav");
     /**
      * Constructor for objects of class Menupage.
      * 
@@ -20,5 +20,11 @@ public class Menupage extends World
         addObject(new lv1(),140,294);
         addObject(new lv2(),395,294);
         addObject(new lv3(),676,294);
+    }
+      public void started(){
+       sound.play();
+    }
+    public void stopped(){
+        sound.pause();
     }
 }

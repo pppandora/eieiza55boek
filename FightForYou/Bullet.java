@@ -22,7 +22,7 @@ public class Bullet extends game
     public void act()
     {
       
-      setLocation(getX()+1,getY());
+      setLocation(getX()+3,getY());
         if(isAtEdge()){
          getWorld().removeObject(this);
          return;

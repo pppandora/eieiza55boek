@@ -12,6 +12,9 @@ public class charector extends Actor
      * Act - do whatever the charector wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public GreenfootSound gun = new GreenfootSound("gun.wav");
+    public GreenfootSound guns = new GreenfootSound("gunboss.wav");
+    public GreenfootSound jump = new GreenfootSound("jump.wav");
     public static int HP = 100;
     public int ySpeed;
     public int groundLevel=310;
@@ -35,18 +38,20 @@ public class charector extends Actor
     {
      
         if(Greenfoot.isKeyDown("z")) {
-               if(delay>=30){
-            getWorld().addObject(new Bullet(), getX(), getY());
-        
-            
-             setImage("chaAc.png"); 
+            if(delay>=30){
+               getWorld().addObject(new Bullet(), getX(), getY());
+               setImage("chaAc.png"); 
+               gun.play();
+               gun.setVolume(70);
             }
         }
     
         if(Greenfoot.isKeyDown("x")) {
                if(delay>=30){
-            getWorld().addObject(new bulletboss(), getX(), getY());
-             setImage("chaAc.png"); 
+              getWorld().addObject(new bulletboss(), getX(), getY());
+              setImage("chaAc.png"); 
+              guns.play();
+               guns.setVolume(70);
             }
         }
     
@@ -83,6 +88,8 @@ public class charector extends Actor
             {
                 ySpeed = -20;
                 setLocation(getX(), getY()+ySpeed);
+               jump.play();
+               jump.setVolume(70);
             }
         }
     }
@@ -90,7 +97,7 @@ public class charector extends Actor
       if(isTouching(Monster.class)||isTouching(Boss.class)||isTouching(shoot.class)){
          HP--;
          if(HP==0){
-           Greenfoot.setWorld(new EndGame());  
+           Greenfoot.setWorld(new Lose());  
           }
       } 
     }

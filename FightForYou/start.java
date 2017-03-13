@@ -21,8 +21,8 @@ public class start extends Actor
     public void checkClick(){
         
         if(Greenfoot.mouseClicked(this)){
-           
-            Greenfoot.setWorld(new Menupage());
+           Greenfoot.setWorld(new Menupage());
+           Greenfoot.playSound("click.wav");
         }
      }
     public void point(){
@@ -33,4 +33,5 @@ public class start extends Actor
             setImage("start1.png");
         }
      }
+     
 }

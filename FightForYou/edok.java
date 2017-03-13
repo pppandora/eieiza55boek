@@ -31,6 +31,8 @@ public class edok extends Boss
             BossHP--;
             if(BossHP == 0){
                 getWorld().removeObject(this);
+                Greenfoot.setWorld(new EndGame());
+                Greenfoot.playSound("Good1.wav");
             }
         }
     }

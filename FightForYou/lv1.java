@@ -19,6 +19,7 @@ public class lv1 extends botton
     }    
     public void checkClick(){
         if(Greenfoot.mouseClicked(this)){
+            Greenfoot.playSound("click.wav");
             Greenfoot.setWorld(new LevelOne());
         } 
     }
