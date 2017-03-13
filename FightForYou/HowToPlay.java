@@ -1,28 +1,25 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Menupage here.
+ * Write a description of class HowToPlay here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Menupage extends World
+public class HowToPlay extends World
 {
     public GreenfootSound sound = new GreenfootSound ("bg.wav");
     /**
-     * Constructor for objects of class Menupage.
+     * Constructor for objects of class HowToPlay.
      * 
      */
-    public Menupage()
+    public HowToPlay()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 400, 1); 
-        addObject(new lv1(),140,294);
-        addObject(new lv2(),395,294);
-        addObject(new lv3(),676,294);
-        addObject(new hwtp(),737,44);
+        addObject(new exithwtp(),771,20);
     }
-     
+
     public void stopped(){
         sound.pause();
     }
