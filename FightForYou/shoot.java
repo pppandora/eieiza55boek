@@ -16,7 +16,7 @@ public class shoot extends game
    public void act() 
     {
         // Add your action code here.
-      setLocation(getX()-50,getY());
+      setLocation(getX()-55,getY());
       if(isAtEdge()){
          getWorld().removeObject(this);
          return;
