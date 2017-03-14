@@ -27,7 +27,7 @@ public class Monster extends Actor
    
     
     public void movement(){
-        move(-2);
+        move(-4);
         if(isAtEdge()){
         getWorld().removeObject(this);
         }

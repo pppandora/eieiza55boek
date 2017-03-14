@@ -12,28 +12,40 @@ public class edok extends Boss
      * Act - do whatever the edok wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int BossHP = 1000;
+    int BossHP = 10;
+    int direc = -2;
     public void act() 
     {
         // Add your action code here.
        // win();
-        move(-1);
+        move(direc);
+        walk();
         
     } 
   
        public void hitit(int damage2) {
-        heart = heart - damage2;
-        
+        BossHP = BossHP - damage2;
+         if(BossHP == 0){
+                getWorld().removeObject(this);
+                Greenfoot.setWorld(new EndGame());
+                
+            }
     }
     
-    public void BossHP(){
+   /* public void BossHP(){
         if(isTouching(bulletboss.class)){
             BossHP--;
             if(BossHP == 0){
                 getWorld().removeObject(this);
                 Greenfoot.setWorld(new EndGame());
-                Greenfoot.playSound("Good1.wav");
+                
             }
+        }
+    }*/
+     public void walk(){
+      if(isAtEdge()){
+        setImage("boss02.png");
+        direc = -direc;
         }
     }
 }

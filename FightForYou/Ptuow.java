@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ptuow extends Boss
 {
-    int BossHP = 1000;
+    int BossHP = 50;
     int time;
-    int direc =-1;
+    int direc =-2;
     /**
      * Act - do whatever the Ptuow wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -24,7 +24,7 @@ public class Ptuow extends Boss
         move(direc);
         shoot();
         walk();
-        BossHP();
+       
     }    
     public void shoot(){
         
@@ -37,16 +37,16 @@ public class Ptuow extends Boss
                     
              
         }
-        public void BossHP(){
-        if(isTouching(bulletboss.class)){
-            BossHP--;
-            if(BossHP == 0){
+       public void hitit(int damage2) {
+        BossHP = BossHP - damage2;
+         if(BossHP == 0){
                 getWorld().removeObject(this);
+                Greenfoot.setWorld(new EndGame());
+                
             }
-        }
     }
     
-     public void die(){
+    /* public void die(){
          if(isTouching(bulletboss.class)){
               heart--;
               if(heart <= 0 ){
@@ -54,7 +54,7 @@ public class Ptuow extends Boss
                 }
             }
         
-       }
+       }*/
        public void walk(){
       if(isAtEdge()){
         setImage("boss02.png");

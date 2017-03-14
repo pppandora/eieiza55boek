@@ -12,7 +12,7 @@ public class Bigboss extends Boss
      * Act - do whatever the Bigboss wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    double heart2= 10000;
+    double heart2= 60;
    int time;
     int direc =-2;
     /**
@@ -28,7 +28,7 @@ public class Bigboss extends Boss
         move(direc);
         shoot();
         walk();
-        die();
+        
     }    
     public void shoot(){
         
@@ -41,18 +41,14 @@ public class Bigboss extends Boss
                     
              
         }
-    
-     public void die(){
-         if(isTouching(bulletboss.class)){
-              heart2--;
-              if(heart2 <= 0 ){
+   public void hitit(int damage2) {
+        heart2 = heart2 - damage2;
+         if(heart2 == 0){
                 getWorld().removeObject(this);
-                
                 Greenfoot.setWorld(new EndGame());
-                }
+                
             }
-        
-       }
+    }
        public void walk(){
       if(isAtEdge()){
         direc = -direc;

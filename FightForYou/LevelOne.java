@@ -49,7 +49,7 @@
        public void addmonster(){
             
            time++;
-          if (time ==120 && d==true){
+          if (time ==60 && d==true){
                addObject(new MonLv1(),Greenfoot.getRandomNumber(600)+800,310);
                
                moncount++;
