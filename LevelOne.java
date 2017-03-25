@@ -12,6 +12,7 @@
         int time;
         int timer;
         int tt;
+        int timedurain=60;
         static int timee = 3600;
         int moncount;
         boolean a = true;
@@ -38,7 +39,7 @@
         public void act(){
             showText(" "+charector.HP+" ",54,20); 
             showText(" "+Score.score+" ", 240,20);
-        
+         randomdurain();
            addmonster();
            timer++;
            tt++;
@@ -46,7 +47,7 @@
             if (timer ==120){
            random();
           }
-         
+        
         }
        
         
@@ -88,6 +89,16 @@
             }
          }
        }
+       public void randomdurain(){
+        timedurain--;
+        if(timedurain==0){
+        addObject(new durain(),Greenfoot.getRandomNumber(800),0);
+        timedurain=60;
+        }
+        
+        }
+       
+       
      
         public void stopped(){
           sound.pause();
