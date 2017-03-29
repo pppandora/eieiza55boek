@@ -81,8 +81,7 @@
        }
         public void time(){
             if(timee>0){
-            showText(" "+timee/50 , 300,20);
-            showText(" "+timee/5 , 300,20);
+            showText(" "+timee/30 , 300,20);
             timee--;
             if(timee == 0){
                 Greenfoot.setWorld(new Lose());
@@ -101,7 +100,7 @@
        
      
         public void stopped(){
-          sound.pause();
+          sound.stop();
        }   
      
     }

@@ -16,11 +16,19 @@ public class lv1 extends botton
     {
         // Add your action code here.
         checkClick();
+        change();
     }    
     public void checkClick(){
         if(Greenfoot.mouseClicked(this)){
             Greenfoot.playSound("click.wav");
             Greenfoot.setWorld(new LevelOne());
         } 
+    }
+    public void change(){
+        if(Greenfoot.mouseMoved(this)){
+            setImage("levbot10.png");
+        }else{
+            setImage("levbot1.png");
+        }
     }
 }

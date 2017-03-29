@@ -23,7 +23,8 @@ public class reset extends botton
             Greenfoot.setWorld(new LevelOne());
             
             Score.score = 0;
-           
+            charector.HP = 100;
+            LevelOne.timee= 3600;
         } 
     }  
 }
